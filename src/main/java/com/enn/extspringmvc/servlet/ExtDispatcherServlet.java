@@ -6,6 +6,7 @@ import com.enn.extspringmvc.utils.ClassUtil;
 import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +15,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
+@WebServlet(urlPatterns = {"/"},loadOnStartup = 1,name = "dispatcher")
 public class ExtDispatcherServlet extends HttpServlet {
 
     private ConcurrentHashMap<String,Object> springmvcBeans=new ConcurrentHashMap<String, Object>();
